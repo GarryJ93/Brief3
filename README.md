@@ -32,12 +32,60 @@ Pour typer, il faut indiquer le type après la déclaration des parametres en in
 ## Level 2
 
 - Qu'est ce qu'une classe ? 
-- Qu'est ce qu'un constructeur de classe ? 
+
+Une classe est un modèle de création d'objets, elle encapsule les données de l'objet.
+
+```
+class voiture = {
+    objet
+};
+```
+- Qu'est ce qu'un constructeur de classe ?
+
+C'est une méthode qui permet de créer de nouveaux objets appartenant à une même classe en définissant des paramètres qui définissent les champs de classe. Il n'a ni nom ni valeur de retour.
+
+```
+class voiture {
+    constructor(marque: string, modèle: string, ...) {
+        this.marque = marque;
+        this.modèle = modèle;
+    };
+};
+
+const voiture1 = new voiture ("Peugeot", "208",...);
+```
+
 - Qu'est ce qu'une instance de classe ?
+
+Une instance de classe est un nouvel objet créé à partir d'une classe existante qui hérite de son comportement et de son état comme l'exemple ci-dessus new voiture.
+
+
 - Comment vérifier qu'une classe est d'une certaine instance ?
+
+On utilise le mot clef instanceof sur une instance pour vérifier sa classe.
+
+```
+console.log(voiture1 instanceof voiture);
+```
+Cela nous log True.
+
 - Qu'est ce que `this` dans une classe ?
+
+this nous permet d'appeler le champ de classe, l'argument du constructor ayant la même valeur que le champs de la classe, ce préfixe nous permet de les différencier.
+
 - Qu'est ce qu'une méthode de classe ? 
+
+Une méthode est un bloc de code à l'intérieur d'une classe qui s'exécute uniquement lorsqu'il est appelé. Les méthodes divisent une grande tâche en petites parties et effectuent l'opération spécifique de ce programme. On peut appeler à nouveau ce code et le moduler.
+
 - Qu'est ce que la visibilité des propriétés ? 
+
+La visibilité est l'accessibilité donnée aux propriétés, en public on peut accéder à la propriété de partout dans le code, en privé on y accède que dans la classe à laquelle la propriété appartient. D'office les propriétés sont publique on peut les rendre privées par le mot clef private dans la déclaration.
+
+```
+class voiture {
+    private marque: string = "BMW"
+}
+```
 
 **🎉🎉🎉Mettre à jour le tableau Github Project🎉🎉🎉**
 
