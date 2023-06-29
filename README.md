@@ -92,10 +92,36 @@ class voiture {
 ## Level 3
 
 - Comment faire pour diviser notre programme en différents fichiers ? (ex: une classe dans un fichier que j'importe dans un autre) 
+
+Nous pouvons utiliser des fichiers de déclaration pour exporter ou importer des classes ou des fonctionnalités.
+
 - Qu'est ce que l'héritage ? 
+
+Via le mot clef extends nous pouvons créer une nouvelle classe à partir d'une classe existante ce qui lui donne en héritage le même type que la classe d'origine.
+
 - Comment appeler le constructeur d'une classe mère ? 
+
+On peut faire appel au constructeur de la classe mère en utilisant le mot-clé super( ) avec les paramètres requis.
+
 - Comment appeler une méthode d'une classe mère ? 
+
+Pour appeler une méthode d'une classe mère nous allons utiliser le mot clef super() également dans la méthode que nous souhaitons appeler.
+
+```
+class Voiture {
+    rouler() { console.log }
+}
+
+class Twingo extends Voiture {
+    rouler() {
+        super.rouler()
+    }
+}
+```
+
 - Qu'est ce que le polymorphism ? 
+
+Le polymorphisme est la capacité de créer une classe qui a plus d'une forme. Ou en d'autres termes, les classes ont les mêmes méthodes mais des implémentations différentes.
 
 **🎉🎉🎉Mettre à jour le tableau Github Project🎉🎉🎉**
 
