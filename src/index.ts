@@ -51,7 +51,7 @@ class HeroAxe extends Hero {
   }
 }
 //  Création d'une instance d'une classe fille et test
-const opponent3: HeroAxe = new HeroAxe("Garry", 100, 600);
+const opponent3: HeroAxe = new HeroAxe("Garry", 1, 600);
 
 // console.log(opponent3);
 // console.log(opponent1);
@@ -86,8 +86,8 @@ class HeroSpear extends Hero {
 }
 
 // instances des autres classes filles et test
-const opponent4: HeroSpear = new HeroSpear("Marcel", 100, 1000);
-const opponent5: HeroSword = new HeroSword("Antoine", 100, 600);
+const opponent4: HeroSpear = new HeroSpear("Marcel", 1, 1000);
+const opponent5: HeroSword = new HeroSword("Antoine", 1, 600);
 // console.log(opponent3);
 // console.log(opponent4.attack(opponent4));
 // console.log(opponent5);
@@ -98,21 +98,26 @@ const opponent5: HeroSword = new HeroSword("Antoine", 100, 600);
 // function contenant une boucle pour la bataille
 
 function Fight(hero1: Hero, hero2: Hero): string {
+  let round: number = 0;
+  
   hero1.isAlive();
   hero2.isAlive();
 
   while (hero1.isAlive() && hero2.isAlive())
+  
+    // round++; 
     hero1.attack(hero2), hero2.attack(hero1);
+  
 
   if (!hero1.isAlive() && !hero2.isAlive()) {
     console.log("it's a draw");
-    return "It's a draw !";
+    return `It's a draw ! ${round} rounds.`;
   } else if (!hero1.isAlive()) {
-    console.log(`${hero2.getNameHero()} wins.`);
-    return `${hero2.getNameHero()} wins.`;
+    console.log(`${hero2.getNameHero()} wins in ${round} rounds.`);
+    return `${hero2.getNameHero()} wins in ${round} rounds.`;
   } else {
-    console.log(`${hero1.getNameHero()} wins.`);
-    return `${hero1.getNameHero()} wins`;
+    console.log(`${hero1.getNameHero()} wins in ${round} rounds.`);
+    return `${hero1.getNameHero()} wins in ${round} rounds.`;
   }
 }
 
