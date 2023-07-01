@@ -44,14 +44,14 @@ class HeroAxe extends Hero {
   // polymorphism par override pour adapter la méthode à mes besoins
   attack(opponent: Hero) {
     if (opponent instanceof HeroSpear) {
-      opponent.setActLife(opponent.getLifeHero() - (this.getPowerHero()+ this.weapon.damage) * 2);
+      opponent.setActLife(opponent.getLifeHero() - this.getPowerHero()* 2 -  this.weapon.damage) ;
     } else {
       super.attack(opponent);
     }
   }
 }
 //  Création d'une instance d'une classe fille et test
-const opponent3: HeroAxe = new HeroAxe("Garry", 1, 600);
+const opponent3: HeroAxe = new HeroAxe("Garry", 3, 1600);
 
 // console.log(opponent3);
 // console.log(opponent1);
@@ -63,7 +63,7 @@ class HeroSword extends Hero {
 
   attack(opponent: Hero) {
     if (opponent instanceof HeroSpear) {
-      opponent.setActLife(opponent.getLifeHero() - (this.getPowerHero()+ this.weapon.damage) * 2);
+     opponent.setActLife(opponent.getLifeHero() - this.getPowerHero()* 2 -  this.weapon.damage) ;
     } else {
       super.attack(opponent);
     }
@@ -78,7 +78,7 @@ class HeroSpear extends Hero {
   attack(opponent: Hero) {
 
     if (opponent instanceof HeroSpear) {
-      opponent.setActLife(opponent.getLifeHero() - (this.getPowerHero()+ this.weapon.damage) * 2); 
+      opponent.setActLife(opponent.getLifeHero() - this.getPowerHero()* 2 -  this.weapon.damage) ; 
     } else {
       super.attack(opponent);
     }
@@ -87,7 +87,7 @@ class HeroSpear extends Hero {
 
 // instances des autres classes filles et test
 const opponent4: HeroSpear = new HeroSpear("Marcel", 1, 1000);
-const opponent5: HeroSword = new HeroSword("Antoine", 1, 600);
+const opponent5: HeroSword = new HeroSword("Antoine", 2, 2000);
 // console.log(opponent3);
 // console.log(opponent4.attack(opponent4));
 // console.log(opponent5);
@@ -97,33 +97,40 @@ const opponent5: HeroSword = new HeroSword("Antoine", 1, 600);
 
 // function contenant une boucle pour la bataille
 
-function Fight(hero1: Hero, hero2: Hero): string {
-  let round: number = 0;
+function Fight(hero1: Hero, hero2: Hero): void {
+  let round: number = 1;
   
   hero1.isAlive();
   hero2.isAlive();
 
   while (hero1.isAlive() && hero2.isAlive())
+  {
+    round++;
+    hero1.attack(hero2);
+    hero2.attack(hero1);
+    console.log(hero1);
+    console.log(hero2);
+  }
+    
   
-    // round++; 
-    hero1.attack(hero2), hero2.attack(hero1);
-  
-
   if (!hero1.isAlive() && !hero2.isAlive()) {
-    console.log("it's a draw");
-    return `It's a draw ! ${round} rounds.`;
+    console.log("it's a draw"); 
+    console.log(round);
+    // return `It's a draw !`;
   } else if (!hero1.isAlive()) {
-    console.log(`${hero2.getNameHero()} wins in ${round} rounds.`);
-    return `${hero2.getNameHero()} wins in ${round} rounds.`;
-  } else {
-    console.log(`${hero1.getNameHero()} wins in ${round} rounds.`);
-    return `${hero1.getNameHero()} wins in ${round} rounds.`;
+    console.log(`${hero2.getNameHero()} wins.`); 
+    console.log(round);
+    // return `${hero2.getNameHero()} wins.`;
+  } else if (!hero2.isAlive()){
+    console.log(`${hero1.getNameHero()} wins.`);
+    console.log(round);
+    // return `${hero1.getNameHero()} wins.`;
   }
 }
 
 Fight(opponent4, opponent3);
 Fight(opponent5, opponent3);
-Fight(opponent4, opponent2);
+// Fight(opponent4, opponent5);
 console.log(opponent3.getLifeHero());
 console.log(opponent4.getLifeHero());
 console.log(opponent3);
@@ -135,5 +142,5 @@ console.log(opponent3);
 // const weaponDamage: string = Object.values(spear.damage.toString()).join("");
 // console.log(weaponDamage); 
 // console.log(Number(weaponDamage));
-Fight(opponent4, opponent1);
+// Fight(opponent4, opponent1);
 console.log(opponent3.weapon.damage);

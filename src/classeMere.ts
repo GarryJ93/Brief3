@@ -10,7 +10,7 @@ export class Hero {
     this.life = life;
   }
 
-  attack(opponent: Hero) {
+  attack(opponent: Hero): void {
     if (typeof this.weapon === undefined) {
       opponent.life -= this.power;
     } else {
