@@ -1,5 +1,5 @@
 "use strict";
-// Import des classes créées dans le fichier classe mère
+// Création classes
 class Hero {
     constructor(name, power, life) {
         this.name = name;
@@ -180,21 +180,21 @@ function ReStart() {
 <h2>Choose your fighter</h2>
 <div id="card">
 <div class="opponent" id="hero1">
-<div><img src="axe.png"></div>
+<div><img src="/src/axe.png"></div>
 <div>Name: ${opponent3.getNameHero()}</div>
 <div>Power: ${opponent3.getPowerHero()}</div>
 <div>Life: ${opponent3.getLifeHero()}</div>
 <div>Weapon: ${opponent3.weapon.name}</div>
 </div>
 <div class="opponent" id="hero2">
-<div><img src="spear.png"></div>
+<div><img src="/src/spear.png"></div>
 <div>Name: ${opponent4.getNameHero()}</div>
 <div>Power: ${opponent4.getPowerHero()}</div>
 <div>Life: ${opponent4.getLifeHero()}</div>
 <div>Weapon: ${opponent4.weapon.name}</div>
 </div>
 <div class="opponent" id="hero3">
-<div><img src="sword.png"></div>
+<div><img src="/src/sword.png"></div>
 <div>Name: ${opponent5.getNameHero()}</div>
 <div>Power: ${opponent5.getPowerHero()}</div>
 <div>Life: ${opponent5.getLifeHero()}</div>
@@ -213,14 +213,14 @@ fighter1.addEventListener("click", function () {
 <h2>FIGHT</h2>
 <div id="card">
 <div class="opponent" id="hero1">
-<div><img src="axe.png"></div>
+<div><img src="/src/axe.png"></div>
 <div>Name: ${opponent3.getNameHero()}</div>
 <div>Power: ${opponent3.getPowerHero()}</div>
 <div>Life: ${opponent3.getLifeHero()}</div>
 <div>Weapon: ${opponent3.weapon.name}</div>
 </div>
 <div class="opponent" id="hero3">
-<div><img src="sword.png"></div>
+<div><img src="/src/sword.png"></div>
 <div>Name: ${opponent5.getNameHero()}</div>
 <div>Power: ${opponent5.getPowerHero()}</div>
 <div>Life: ${opponent5.getLifeHero()}</div>
@@ -252,14 +252,14 @@ fighter2.addEventListener("click", function () {
 <h2>FIGHT</h2>
 <div id="card">
 <div class="opponent" id="hero2">
-<div><img src="spear.png"></div>
+<div><img src="/src/spear.png"></div>
 <div>Name: ${opponent4.getNameHero()}</div>
 <div>Power: ${opponent4.getPowerHero()}</div>
 <div>Life: ${opponent4.getLifeHero()}</div>
 <div>Weapon: ${opponent4.weapon.name}</div>
 </div>
 <div class="opponent" id="hero1">
-<div><img src="axe.png"></div>
+<div><img src="/src/axe.png"></div>
 <div>Name: ${opponent3.getNameHero()}</div>
 <div>Power: ${opponent3.getPowerHero()}</div>
 <div>Life: ${opponent3.getLifeHero()}</div>
@@ -291,14 +291,14 @@ fighter3.addEventListener("click", function () {
 <h2>FIGHT</h2>
 <div id="card">
 <div class="opponent" id="hero2">
-<div><img src="spear.png"></div>
+<div><img src="/src/spear.png"></div>
 <div>Name: ${opponent4.getNameHero()}</div>
 <div>Power: ${opponent4.getPowerHero()}</div>
 <div>Life: ${opponent4.getLifeHero()}</div>
 <div>Weapon: ${opponent4.weapon.name}</div>
 </div>
 <div class="opponent" id="hero3">
-<div><img src="sword.png"></div>
+<div><img src="/src/sword.png"></div>
 <div>Name: ${opponent5.getNameHero()}</div>
 <div>Power: ${opponent5.getPowerHero()}</div>
 <div>Life: ${opponent5.getLifeHero()}</div>
